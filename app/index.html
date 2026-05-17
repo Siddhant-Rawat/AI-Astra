@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Astra AI | Websites Redefined by Intelligence</title>
     <meta name="description" content="Astra AI combines human creativity with artificial intelligence to deliver high-performance, premium websites for the next generation of business." />
+    <!-- Prevent flash of wrong theme before React hydrates -->
+    <script>
+      (function () {
+        var t = localStorage.getItem('astra-theme');
+        if (t === 'light') return;
+        document.documentElement.classList.add('dark');
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

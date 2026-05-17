@@ -1,3 +1,4 @@
+import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -10,18 +11,20 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <div className="bg-[#0A0A0A] text-on-surface font-sans overflow-x-hidden">
-      <Header />
-      <main>
-        <Hero />
-        <Services />
-        <Portfolio />
-        <Testimonials />
-        <Process />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="bg-background text-on-surface font-sans overflow-x-hidden transition-colors duration-300">
+        <Header />
+        <main>
+          <Hero />
+          <Services />
+          <Portfolio />
+          <Testimonials />
+          <Process />
+          <FAQ />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }

@@ -89,7 +89,7 @@ export default function Process() {
                 className="relative z-10 flex flex-col items-center text-center group cursor-default"
               >
                 <div
-                  className={`w-14 h-14 rounded-full bg-[#0A0A0A] border-2 ${step.borderIdle} ${step.borderHover} flex items-center justify-center mb-6 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(184,195,255,0.15)]`}
+                  className={`w-14 h-14 rounded-full bg-background border-2 ${step.borderIdle} ${step.borderHover} flex items-center justify-center mb-6 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(184,195,255,0.15)]`}
                 >
                   <span className={`text-headline-md font-bold ${step.color}`}>{step.num}</span>
                 </div>

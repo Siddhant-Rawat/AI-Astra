@@ -2,53 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+/* ─── Theme tokens ──────────────────────────────────────────────────────── */
+
+/* Light theme (default) */
+:root {
+  --color-background:           240 244 255;
+  --color-surface:              255 255 255;
+  --color-surface-dim:          232 236 255;
+  --color-scl:                  248 250 255;   /* surface-container-lowest  */
+  --color-sclo:                 239 241 255;   /* surface-container-low     */
+  --color-sc:                   229 232 255;   /* surface-container         */
+  --color-sch:                  221 224 255;   /* surface-container-high    */
+  --color-schh:                 213 216 255;   /* surface-container-highest */
+  --color-on-surface:           5   5   24;
+  --color-on-surface-variant:   61  63  106;
+  --color-primary:              45  91  255;
+  --color-on-primary:           255 255 255;
+  --color-primary-container:    221 225 255;
+  --color-secondary:            87  27  193;
+  --color-on-secondary:         255 255 255;
+  --color-secondary-container:  233 221 255;
+  --color-tertiary:             0   121 129;
+  --color-on-tertiary:          255 255 255;
+  --color-tertiary-container:   196 250 255;
+  --color-outline:              136 144 164;
+  --color-outline-variant:      197 200 224;
 }
+
+/* Dark theme */
+.dark {
+  --color-background:           10  10  10;
+  --color-surface:              19  19  19;
+  --color-surface-dim:          19  19  19;
+  --color-scl:                  14  14  14;
+  --color-sclo:                 28  27  27;
+  --color-sc:                   32  31  31;
+  --color-sch:                  42  42  42;
+  --color-schh:                 53  53  52;
+  --color-on-surface:           229 226 225;
+  --color-on-surface-variant:   196 197 217;
+  --color-primary:              184 195 255;
+  --color-on-primary:           0   35  135;
+  --color-primary-container:    45  91  255;
+  --color-secondary:            208 188 255;
+  --color-on-secondary:         60  0   145;
+  --color-secondary-container:  87  27  193;
+  --color-tertiary:             0   219 233;
+  --color-on-tertiary:          0   54  58;
+  --color-tertiary-container:   0   121 129;
+  --color-outline:              142 144 162;
+  --color-outline-variant:      67  70  86;
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────── */
+
+html { scroll-behavior: smooth; scrollbar-gutter: stable; }
 
 body {
-  background-color: #0A0A0A;
-  color: #e5e2e1;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-on-surface));
   font-family: 'Geist Variable', system-ui, sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #0A0A0A; }
-::-webkit-scrollbar-thumb { background: #353534; border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #8e90a2; }
+/* ─── Scrollbar ─────────────────────────────────────────────────────────── */
 
-/* Glassmorphism */
+::-webkit-scrollbar          { width: 5px; }
+::-webkit-scrollbar-track    { background: rgb(var(--color-background)); }
+::-webkit-scrollbar-thumb    { background: rgb(var(--color-outline-variant)); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--color-outline)); }
+
+/* ─── Glassmorphism ─────────────────────────────────────────────────────── */
+
 .glass-card {
-  background: rgba(23, 23, 23, 0.65);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(45, 91, 255, 0.12);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
-
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 40px rgba(45, 91, 255, 0.1);
+  border-color: rgba(45, 91, 255, 0.22);
+  box-shadow: 0 0 40px rgba(45, 91, 255, 0.07);
   transform: translateY(-4px);
 }
 
-/* Accent gradient */
-.accent-gradient {
-  background: linear-gradient(135deg, #2d5bff 0%, #571bc1 60%, #d0bcff 100%);
+.dark .glass-card {
+  background: rgba(23, 23, 23, 0.65);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.dark .glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 40px rgba(45, 91, 255, 0.1);
 }
 
+/* ─── Accent gradient (buttons) ─────────────────────────────────────────── */
+
+.accent-gradient {
+  background: linear-gradient(135deg, #2d5bff 0%, #571bc1 60%, #8b3fda 100%);
+}
+
+/* ─── Accent gradient text ──────────────────────────────────────────────── */
+
 .accent-gradient-text {
+  background: linear-gradient(135deg, #2d5bff 0%, #571bc1 50%, #007981 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 5s ease infinite;
+}
+
+.dark .accent-gradient-text {
   background: linear-gradient(135deg, #b8c3ff 0%, #d0bcff 50%, #00dbe9 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 4s ease infinite;
+  animation: gradientShift 5s ease infinite;
 }
 
-/* Ambient neural glow */
+/* ─── Neural glow ───────────────────────────────────────────────────────── */
+
 .neural-glow {
   position: absolute;
   border-radius: 50%;
@@ -56,35 +132,29 @@ body {
   z-index: 0;
 }
 
-/* Animations */
+/* ─── Animations ────────────────────────────────────────────────────────── */
+
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-16px); }
+  50%       { transform: translateY(-16px); }
 }
 
 @keyframes ambientPulse {
   0%, 100% { opacity: 0.04; transform: scale(1); }
-  50% { opacity: 0.09; transform: scale(1.15); }
+  50%       { opacity: 0.09; transform: scale(1.15); }
 }
 
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  50%       { background-position: 100% 50%; }
 }
 
 @keyframes spinnerSpin {
   to { transform: rotate(360deg); }
 }
 
-.spinner {
-  animation: spinnerSpin 0.8s linear infinite;
-}
+.spinner { animation: spinnerSpin 0.8s linear infinite; }
 
-/* Form input focus ring override */
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  box-shadow: none;
-}
+/* ─── Form inputs ───────────────────────────────────────────────────────── */
 
-/* Prevent layout shift from scrollbar */
-html { scrollbar-gutter: stable; }
+input:focus, textarea:focus, select:focus { outline: none; box-shadow: none; }
