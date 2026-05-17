@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aether AI | Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#5516be",
+                    "primary-fixed": "#dde1ff",
+                    "on-tertiary-fixed": "#002022",
+                    "on-error": "#690005",
+                    "inverse-primary": "#104af0",
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface-variant": "#c4c5d9",
+                    "on-primary": "#002387",
+                    "on-secondary-fixed": "#23005c",
+                    "on-secondary-container": "#c4abff",
+                    "surface-container": "#201f1f",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "secondary-container": "#571bc1",
+                    "tertiary-container": "#007981",
+                    "on-primary-container": "#efefff",
+                    "surface-bright": "#3a3939",
+                    "outline": "#8e90a2",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "tertiary-fixed": "#7df4ff",
+                    "tertiary": "#00dbe9",
+                    "background": "#131313",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "on-secondary": "#3c0091",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-variant": "#353534",
+                    "primary": "#b8c3ff",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "secondary": "#d0bcff",
+                    "surface": "#131313",
+                    "secondary-fixed": "#e9ddff",
+                    "outline-variant": "#434656",
+                    "on-background": "#e5e2e1",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary-container": "#c4faff",
+                    "on-primary-fixed-variant": "#0035bd",
+                    "primary-container": "#2d5bff",
+                    "on-tertiary": "#00363a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-error-container": "#ffdad6",
+                    "error-container": "#93000a",
+                    "surface-container-highest": "#353534",
+                    "surface-dim": "#131313",
+                    "surface-tint": "#b8c3ff",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#001355",
+                    "inverse-surface": "#e5e2e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "margin-tablet": "32px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "display-xl-mobile": ["Geist"],
+                    "headline-md": ["Geist"],
+                    "body-md": ["Geist"],
+                    "label-sm": ["Geist"],
+                    "display-xl": ["Geist"],
+                    "headline-lg": ["Geist"],
+                    "body-lg": ["Geist"]
+            },
+            "fontSize": {
+                    "display-xl-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0A;
+            color: #e5e2e1;
+            font-family: 'Geist', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+        .ambient-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(184, 195, 255, 0.08) 0%, transparent 70%);
+            filter: blur(40px);
+            z-index: -1;
+        }
+        .accent-gradient-btn {
+            background: linear-gradient(135deg, #2d5bff 0%, #571bc1 100%);
+            transition: box-shadow 0.3s ease;
+        }
+        .accent-gradient-btn:hover {
+            box-shadow: 0 0 20px rgba(45, 91, 255, 0.4);
+        }
+        .neural-connector {
+            background: linear-gradient(90deg, transparent, rgba(184, 195, 255, 0.2), transparent);
+            height: 1px;
+            width: 100%;
+        }
+        .active-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #b8c3ff;
+            box-shadow: 0 0 10px #b8c3ff;
+        }
+    </style>
+</head>
+<body class="dark bg-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-tablet py-4">
+<div class="font-display-xl-mobile text-display-xl-mobile font-bold text-on-surface tracking-tighter">Aether AI</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center font-body-md text-body-md">
+<a class="text-primary font-medium border-b-2 border-primary pb-1" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="#">Process</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-white/5 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="dark_mode">dark_mode</span>
+</button>
+<button class="accent-gradient-btn text-on-primary px-6 py-2 rounded-full font-label-sm text-label-sm scale-95 active:scale-90 transition-transform">
+                    Get Started
+                </button>
+</div>
+</div>
+</header>
+<main class="relative pt-32 px-margin-tablet space-y-32">
+<div class="ambient-glow -top-20 -left-20"></div>
+<div class="ambient-glow top-[40%] -right-20" style="background: radial-gradient(circle, rgba(0, 219, 233, 0.05) 0%, transparent 70%);"></div>
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[60vh]">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+<div class="active-dot"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Next-Gen Intelligence</span>
+</div>
+<h1 class="font-display-xl-mobile text-display-xl-mobile md:text-display-xl text-on-surface leading-tight">
+                    Websites Redefined by <span class="text-primary">Intelligence</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    We bridge the gap between high-level consulting and autonomous systems to create digital experiences that think, learn, and convert.
+                </p>
+<div class="flex gap-4">
+<button class="accent-gradient-btn text-white px-8 py-4 rounded-xl font-label-sm text-label-sm shadow-xl">Explore Services</button>
+<button class="border border-white/10 backdrop-blur-md bg-white/5 text-on-surface px-8 py-4 rounded-xl font-label-sm text-label-sm hover:bg-white/10 transition-all">View Process</button>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75 transition-transform group-hover:scale-90"></div>
+<img alt="Neural AI Visualization" class="relative z-10 w-full object-contain rounded-2xl" src="https://lh3.googleusercontent.com/aida/ADBb0uiRDRezDTZAZ0RhpaLs3UNDLxZn_UpznUR-pKAyDFknHWaDsUXxpEjvKf15ELog5-6Pj4p1wQ5eVmL2F38Kklew0Ab19bho-PtnOIzll1VgHezOCJhg39so2-tQ9epU9dY1ijHdJfJO5oCg_QOukOkWnt9pYqKvzLAkx7ISx62l_Fcq-q59qHSHR04LNzjUM8Olq4Zf3b-XMmSpzpzx17Vqy3FB_qyLeb4pzJnBxxSezCrDTTCkmqErcg"/>
+</div>
+</section>
+<!-- Core Offerings -->
+<section class="space-y-12">
+<div class="text-center max-w-2xl mx-auto space-y-4">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Cognitive Capabilities</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Precision-engineered solutions tailored for the high-end digital landscape.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div class="glass-card p-8 rounded-2xl space-y-6">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="neurology">neurology</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Neural Interfaces</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Adaptive UI components that evolve based on real-time user behavior and sentiment analysis.</p>
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm">
+<span>Read More</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="glass-card p-8 rounded-2xl space-y-6">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="data_exploration">data_exploration</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Predictive Logic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Backend architectures that anticipate market shifts and user needs before they occur.</p>
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm">
+<span>Read More</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<div class="glass-card p-8 rounded-2xl space-y-6 md:col-span-2 lg:col-span-1">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="cloud_sync">cloud_sync</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Autonomous Cloud</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Self-healing infrastructures that maintain 99.99% uptime through intelligent scaling.</p>
+<div class="flex items-center gap-2 text-primary font-label-sm text-label-sm">
+<span>Read More</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Engineering Portfolio (Bento Style) -->
+<section class="space-y-12">
+<div class="flex justify-between items-end">
+<div class="space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Masterpieces</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A selected look at our recent digital engineering.</p>
+</div>
+<button class="text-primary font-label-sm text-label-sm flex items-center gap-2 hover:underline decoration-2 underline-offset-8">
+                    View Archive
+                    <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 group relative overflow-hidden rounded-2xl glass-card h-[400px]">
+<img alt="Lumina Capital Dashboard" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" src="https://lh3.googleusercontent.com/aida/ADBb0uitEeL47kd3XnvuRm0ff04a6Z-NETaDcrPhqy3f6xhPQlPu9w-GCgUD_e5ZertNA9JbGMCUGfK3kZK-yrLQkFQN76aD7nE10tfloWPyWDn-C4H-YBKxxCXie2LVIHEp0LjNkPXZEw8G3BWYISgH22mJyuQMs57m0X24PUmC6GB1ePlVYIMzMP3dpiMP1nvF6fYavnYEaWbYPru8VYmHJItFT0gh4XH2bvHy0WVL7SKAK-vaaA6kIP_7ZQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 p-8 space-y-3">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Finance</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Lumina Capital</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Next-gen quantitative trading dashboard with neural market prediction.</p>
+</div>
+</div>
+<div class="md:col-span-5 group relative overflow-hidden rounded-2xl glass-card h-[400px]">
+<img alt="Aurelius Boutique Interface" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" src="https://lh3.googleusercontent.com/aida/ADBb0ujPWHZek4qZR-9EkwKSiA86GtBKKonsK0djUhqXqU8KW2C-ovkXFUYhkOMdq3Cf0Yd4FePL6O2JJbJCXwlF8-1lKwNhL12CWFWTVTB6un0uC1cAM7vZP3CJJ3xe1BJMBAR8l4VhBi_LRO9XcOLQ2BRo_vEdCPm5SORJwkGRZ6n0ArBbU9SPzm1wSCE1zGYlKlge0h8OlvoEop6UgJk2a3ioQwd4Z0hyQ-JT2BNxoFEtydwc9hHu5FGB6z0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 p-8 space-y-3">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest bg-secondary/10 px-3 py-1 rounded-full">Fashion</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Aurelius Boutique</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">AI-driven curated shopping experience for luxury fashion.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners (Carousel Mock) -->
+<section class="py-12 border-y border-white/5">
+<div class="flex flex-wrap justify-center md:justify-between items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface"><span class="material-symbols-outlined" data-icon="polymer">polymer</span> NEXUS</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface"><span class="material-symbols-outlined" data-icon="token">token</span> ETHOS</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface"><span class="material-symbols-outlined" data-icon="database">database</span> ORACLE</div>
+<div class="flex items-center gap-2 font-headline-md text-headline-md text-on-surface"><span class="material-symbols-outlined" data-icon="stream">stream</span> FLOW</div>
+</div>
+</section>
+<!-- Intelligence Lifecycle -->
+<section class="space-y-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Lifecycle of Intelligence</h2>
+<div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="relative space-y-4">
+<div class="text-display-xl-mobile font-bold text-primary/20">01</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Cognition</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Discovery phase mapping your brand's digital nervous system.</p>
+<div class="neural-connector hidden lg:block absolute -right-6 top-8"></div>
+</div>
+<div class="relative space-y-4">
+<div class="text-display-xl-mobile font-bold text-secondary/20">02</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Synthesis</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Structuring data into intuitive user flow architectures.</p>
+<div class="neural-connector hidden lg:block absolute -right-6 top-8"></div>
+</div>
+<div class="relative space-y-4">
+<div class="text-display-xl-mobile font-bold text-tertiary/20">03</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Evolution</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Iterative design with integrated neural-behavior loops.</p>
+<div class="neural-connector hidden lg:block absolute -right-6 top-8"></div>
+</div>
+<div class="relative space-y-4">
+<div class="text-display-xl-mobile font-bold text-primary/20">04</div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Singularity</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Full deployment and ongoing autonomous optimization.</p>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="max-w-3xl mx-auto space-y-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface text-center">Inquiries</h2>
+<div class="space-y-4">
+<div class="glass-card p-6 rounded-xl border-l-4 border-l-primary">
+<div class="flex justify-between items-center cursor-pointer">
+<span class="font-headline-md text-headline-md text-on-surface">How does AI improve conversion?</span>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</div>
+<div class="mt-4 font-body-md text-body-md text-on-surface-variant">
+                        Our systems analyze real-time micro-behaviors to dynamically adjust layout, copy, and CTAs for each specific visitor segment.
+                    </div>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<div class="flex justify-between items-center cursor-pointer">
+<span class="font-headline-md text-headline-md text-on-surface">What is the typical lifecycle duration?</span>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<div class="flex justify-between items-center cursor-pointer">
+<span class="font-headline-md text-headline-md text-on-surface">Do you integrate with existing CRMs?</span>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form -->
+<section class="glass-card max-w-4xl mx-auto p-12 rounded-3xl relative overflow-hidden mb-32">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Initiate Contact</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Ready to redefine your digital presence? Send a brief message to start the synthesis.</p>
+<div class="space-y-4 pt-6">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+<span class="font-body-md text-body-md">intelligence@aether.ai</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="font-body-md text-body-md">Neo Tokyo, Virtual Sector 7</span>
+</div>
+</div>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<input class="w-full bg-surface-container-lowest border-0 border-b border-white/10 text-on-surface p-4 rounded-t-lg focus:ring-0 focus:border-primary transition-all placeholder:text-on-surface-variant/40" placeholder="Identity" type="text"/>
+</div>
+<div class="space-y-2">
+<input class="w-full bg-surface-container-lowest border-0 border-b border-white/10 text-on-surface p-4 focus:ring-0 focus:border-primary transition-all placeholder:text-on-surface-variant/40" placeholder="Neural Address" type="email"/>
+</div>
+<div class="space-y-2">
+<textarea class="w-full bg-surface-container-lowest border-0 border-b border-white/10 text-on-surface p-4 rounded-b-lg focus:ring-0 focus:border-primary transition-all placeholder:text-on-surface-variant/40 resize-none" placeholder="Mission Briefing" rows="4"></textarea>
+</div>
+<button class="accent-gradient-btn w-full text-white py-4 rounded-xl font-headline-md text-headline-md">Submit Protocol</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-tablet border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tighter">Aether AI</div>
+<div class="flex gap-8 font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Security</a>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-80">
+            © 2026 Aether AI Consulting. All rights reserved.
+        </p>
+</footer>
+</body></html>
